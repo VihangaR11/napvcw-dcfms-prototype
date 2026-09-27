@@ -1,0 +1,29 @@
+FROM dunglas/frankenphp:php8.4
+
+WORKDIR /app
+
+RUN install-php-extensions \
+    pdo_pgsql \
+    pgsql \
+    mbstring \
+    intl \
+    zip \
+    opcache
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+COPY . .
+
+RUN composer install \
+    --no-dev \
+    --optimize-autoloader \
+    --no-interaction
+
+RUN php artisan storage:link || true
+
+RUN chmod -R 775 storage bootstrap/cache
+
+ENV APP_ENV=production
+ENV APP_DEBUG=false
+
+CMD ["frankenphp", "php-server", "-r", "public"]

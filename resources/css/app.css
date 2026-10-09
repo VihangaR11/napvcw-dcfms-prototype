@@ -7,3 +7,249 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* =========================================================
+   DCFMS GLOBAL THEME SYSTEM
+========================================================= */
+
+:root {
+    color-scheme: dark;
+
+    --app-bg: #070b1d;
+    --sidebar-bg: #0e1a2b;
+    --header-bg: #0b1226;
+    --surface: #111a2e;
+    --surface-alt: #0d172a;
+    --surface-hover: #152238;
+
+    --text-main: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    --border-main: #1e293b;
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+
+    --app-bg: #f1f5f9;
+    --sidebar-bg: #ffffff;
+    --header-bg: #ffffff;
+    --surface: #ffffff;
+    --surface-alt: #f8fafc;
+    --surface-hover: #e2e8f0;
+
+    --text-main: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+
+    --border-main: #dbe3ed;
+}
+
+
+/* Smooth theme change */
+body,
+aside,
+header,
+main,
+section,
+div,
+nav,
+footer,
+input,
+textarea,
+select {
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* =========================================================
+   GLOBAL BODY
+========================================================= */
+
+html[data-theme="light"] body {
+    background-color: var(--app-bg) !important;
+    color: var(--text-main) !important;
+}
+
+
+/* =========================================================
+   COMPATIBILITY WITH EXISTING DARK CLASSES
+   This lets existing pages change theme without rewriting
+   every Blade file immediately.
+========================================================= */
+
+/* Main dark backgrounds */
+html[data-theme="light"] [class~="bg-[#070B1D]"] {
+    background-color: #f1f5f9 !important;
+}
+
+html[data-theme="light"] [class~="bg-[#0E1A2B]"] {
+    background-color: #ffffff !important;
+}
+
+html[data-theme="light"] [class~="bg-[#0B1226]"] {
+    background-color: #ffffff !important;
+}
+
+html[data-theme="light"] [class~="bg-[#111A2E]"] {
+    background-color: #ffffff !important;
+}
+
+html[data-theme="light"] [class~="bg-[#111A33]"] {
+    background-color: #ffffff !important;
+}
+
+html[data-theme="light"] [class~="bg-[#0D172A]"] {
+    background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] [class~="bg-[#0C1528]"] {
+    background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] [class~="bg-[#101A35]"] {
+    background-color: #f1f5f9 !important;
+}
+
+html[data-theme="light"] [class~="bg-[#152238]"] {
+    background-color: #e2e8f0 !important;
+}
+
+
+/* Transparent versions used by headers/cards */
+html[data-theme="light"] [class*="bg-[#0B1226]/"] {
+    background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+html[data-theme="light"] [class*="bg-[#0D172A]/"] {
+    background-color: rgba(248, 250, 252, 0.96) !important;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+html[data-theme="light"] .text-slate-200 {
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] .text-slate-300 {
+    color: #334155 !important;
+}
+
+html[data-theme="light"] .text-slate-400 {
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .text-slate-500 {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .text-slate-600 {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .text-slate-700 {
+    color: #475569 !important;
+}
+
+
+/* Normal white headings become dark in light mode */
+html[data-theme="light"]
+:is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, span, div).text-white {
+    color: #0f172a !important;
+}
+
+
+/* Inputs */
+html[data-theme="light"] input.text-white,
+html[data-theme="light"] select.text-white,
+html[data-theme="light"] textarea.text-white {
+    color: #0f172a !important;
+}
+
+
+/* Keep button and gradient action text white */
+html[data-theme="light"] button.text-white,
+html[data-theme="light"] a.text-white {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   BORDERS
+========================================================= */
+
+html[data-theme="light"] .border-slate-800 {
+    border-color: #dbe3ed !important;
+}
+
+html[data-theme="light"] .border-slate-700 {
+    border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .border-slate-600 {
+    border-color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+html[data-theme="light"] input,
+html[data-theme="light"] select,
+html[data-theme="light"] textarea {
+    color: #0f172a;
+}
+
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+html[data-theme="light"] table {
+    color: #1e293b;
+}
+
+html[data-theme="light"] thead[class*="bg-[#0D172A]"] {
+    background-color: #f1f5f9 !important;
+}
+
+
+/* =========================================================
+   GRADIENT HERO CARDS
+========================================================= */
+
+html[data-theme="light"] .bg-gradient-to-br.from-\[\#101A35\] {
+    background-image:
+        linear-gradient(
+            to bottom right,
+            #ffffff,
+            #f8fafc,
+            #eef2ff
+        ) !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+html[data-theme="dark"] {
+    scrollbar-color: #334155 #0e1a2b;
+}
+
+html[data-theme="light"] {
+    scrollbar-color: #94a3b8 #f1f5f9;
+}

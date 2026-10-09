@@ -8,51 +8,157 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    /**
+     * Show the login form.
+     */
     public function showLoginForm()
     {
         if (Auth::check()) {
-            return redirect()->route('dashboard');
+            return redirect()
+                ->route('dashboard');
         }
 
         return view('auth.login');
     }
 
+    /**
+     * Authenticate employee using EPF number and password.
+     */
     public function login(Request $request)
     {
-        $credentials = $request->validate([
-            'employee_number' => ['required', 'string'],
-            'password' => ['required', 'string'],
+        $validated = $request->validate([
+            'employee_number' => [
+                'required',
+                'string',
+            ],
+
+            'password' => [
+                'required',
+                'string',
+            ],
         ]);
 
-        $remember = $request->boolean('remember');
+        $employeeNumber = strtoupper(
+            trim(
+                $validated['employee_number']
+            )
+        );
 
-        if (Auth::attempt([
-            'employee_number' => $credentials['employee_number'],
-            'password' => $credentials['password'],
-            'is_active' => true,
-        ], $remember)) {
+        $credentials = [
+            'employee_number' => $employeeNumber,
+            'password' => $validated['password'],
+        ];
 
-            $request->session()->regenerate();
+        /*
+        |--------------------------------------------------------------------------
+        | Attempt Login
+        |--------------------------------------------------------------------------
+        */
 
-            return redirect()
-                ->intended(route('dashboard'))
-                ->with('success', 'Login successful.');
+        if (!Auth::attempt(
+            $credentials,
+            $request->boolean('remember')
+        )) {
+            return back()
+                ->withErrors([
+                    'employee_number' =>
+                        'The EPF number or password is incorrect.',
+                ])
+                ->onlyInput(
+                    'employee_number'
+                );
         }
 
-        return back()
-            ->withErrors([
-                'employee_number' => 'Invalid employee number or password.',
-            ])
-            ->onlyInput('employee_number');
+        /*
+        |--------------------------------------------------------------------------
+        | Regenerate Session
+        |--------------------------------------------------------------------------
+        */
+
+        $request->session()->regenerate();
+
+        $user = Auth::user();
+
+        /*
+        |--------------------------------------------------------------------------
+        | Account Status Check
+        |--------------------------------------------------------------------------
+        */
+
+        if (!$user->is_active) {
+
+            $message = match ($user->account_status) {
+
+                'pending' =>
+                    'Your account registration is awaiting administrator approval.',
+
+                'rejected' =>
+                    'Your account registration request was not approved.',
+
+                'suspended' =>
+                    'Your account access has been suspended. Please contact the system administrator.',
+
+                default =>
+                    'Your account is currently inactive.',
+            };
+
+            /*
+            |--------------------------------------------------------------------------
+            | Logout Inactive User
+            |--------------------------------------------------------------------------
+            */
+
+            Auth::logout();
+
+            $request
+                ->session()
+                ->invalidate();
+
+            $request
+                ->session()
+                ->regenerateToken();
+
+            return back()
+                ->withErrors([
+                    'employee_number' => $message,
+                ])
+                ->onlyInput(
+                    'employee_number'
+                );
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Successful Login
+        |--------------------------------------------------------------------------
+        */
+
+        return redirect()
+            ->intended(
+                route('dashboard')
+            );
     }
 
+    /**
+     * Logout user.
+     */
     public function logout(Request $request)
     {
         Auth::logout();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        $request
+            ->session()
+            ->invalidate();
 
-        return redirect()->route('login');
+        $request
+            ->session()
+            ->regenerateToken();
+
+        return redirect()
+            ->route('login')
+            ->with(
+                'success',
+                'You have been signed out successfully.'
+            );
     }
 }

@@ -1,0 +1,92 @@
+<?php
+
+return [
+    'title' => 'Protection Workflow',
+    'page_title' => 'Protection Services Workflow',
+    'page_description' => 'Manage protection requests, threat-assessment coordination, interim protection and protection decisions.',
+    'master_case' => 'Master Case',
+    'division_name' => 'Protection Services',
+    'received' => 'Received',
+    'threat_type' => 'Threat Type',
+    'threat_level' => 'Threat Level',
+    'assessment' => 'Assessment',
+    'pending' => 'Pending',
+    'not_recorded' => 'Not recorded',
+
+    'registration_assignment' => 'Protection Registration & Assignment',
+    'registration_assignment_desc' => 'Record the responsible officer and current protection workflow stage.',
+    'protection_officer' => 'Protection Officer',
+    'select_protection_officer' => 'Select Protection Officer',
+    'workflow_status' => 'Protection Workflow Status',
+    'local_police_station' => 'Local Police Station',
+    'threat_type_placeholder' => 'e.g. Death threat / influence / intimidation',
+
+    'threat_assessment_coordination' => 'Threat Assessment Coordination',
+    'threat_assessment_coordination_desc' => 'Track the request sent to Police Protection and the returned assessment.',
+    'threat_assessment_requested_date' => 'Threat Assessment Requested Date',
+    'police_reference' => 'Police Reference',
+    'threat_assessment_status' => 'Threat Assessment Status',
+    'threat_assessment_received_date' => 'Threat Assessment Received Date',
+    'interim_protection_required' => 'Interim Protection Required',
+    'interim_protection_required_desc' => 'Mark when immediate temporary protection should be coordinated before the full assessment is received.',
+    'interim_protection_requested_date' => 'Interim Protection Requested Date',
+
+    'threat_assessment_result' => 'Threat Assessment Result',
+    'threat_assessment_result_desc' => 'Assessment values returned from Police Protection can be reviewed here.',
+    'not_determined' => 'Not determined',
+    'threat_assessment_summary' => 'Threat Assessment Summary',
+
+    'protection_decision_review' => 'Protection Decision & Review',
+    'protection_decision' => 'Protection Decision',
+    'protection_decision_placeholder' => 'Record the protection decision...',
+    'protection_start_date' => 'Protection Start Date',
+    'review_date' => 'Review Date',
+    'protection_outcome' => 'Protection Outcome',
+
+    'workflow_remarks' => 'Workflow Remarks',
+    'remarks_placeholder' => 'Enter latest protection workflow note...',
+    'protection_workflow' => 'Protection Workflow',
+    'changes_recorded_timeline' => 'Changes will be recorded in the shared case timeline.',
+    'cancel' => 'Cancel',
+    'save_workflow' => 'Save Protection Workflow',
+
+    'statuses' => [
+        'protection_request_received' => 'Protection Request Received',
+        'protection_officer_assigned' => 'Protection Officer Assigned',
+        'threat_assessment_requested' => 'Threat Assessment Requested',
+        'awaiting_threat_assessment' => 'Awaiting Threat Assessment',
+        'threat_assessment_received' => 'Threat Assessment Received',
+        'protection_decision_pending' => 'Protection Decision Pending',
+        'protection_active' => 'Protection Active',
+        'protection_under_review' => 'Protection Under Review',
+        'protection_continued' => 'Protection Continued',
+        'protection_withdrawn' => 'Protection Withdrawn',
+        'protection_terminated' => 'Protection Terminated',
+        'closed' => 'Closed',
+    ],
+
+    'assessment_statuses' => [
+        'not_requested' => 'Not Requested',
+        'request_sent' => 'Request Sent',
+        'request_received' => 'Request Received',
+        'assessment_in_progress' => 'Assessment In Progress',
+        'assessment_completed' => 'Assessment Completed',
+        'assessment_received' => 'Assessment Received',
+    ],
+
+    'threat_levels' => [
+        'low' => 'Low',
+        'moderate' => 'Moderate',
+        'high' => 'High',
+        'critical' => 'Critical',
+    ],
+
+    'outcomes' => [
+        'protection_provided' => 'Protection Provided',
+        'protection_continued' => 'Protection Continued',
+        'protection_withdrawn' => 'Protection Withdrawn',
+        'protection_terminated' => 'Protection Terminated',
+        'transferred_referred' => 'Transferred / Referred',
+        'closed' => 'Closed',
+    ],
+];

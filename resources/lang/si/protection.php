@@ -1,0 +1,92 @@
+<?php
+
+return [
+    'title' => 'ආරක්ෂණ කාර්ය ප්‍රවාහය',
+    'page_title' => 'ආරක්ෂණ සේවා කාර්ය ප්‍රවාහය',
+    'page_description' => 'ආරක්ෂණ ඉල්ලීම්, තර්ජන ඇගයීම් සම්බන්ධීකරණය, අතුරු ආරක්ෂාව සහ ආරක්ෂණ තීරණ කළමනාකරණය කරන්න.',
+    'master_case' => 'ප්‍රධාන නඩුව',
+    'division_name' => 'ආරක්ෂණ සේවා',
+    'received' => 'ලැබුණු දිනය',
+    'threat_type' => 'තර්ජන වර්ගය',
+    'threat_level' => 'තර්ජන මට්ටම',
+    'assessment' => 'ඇගයීම',
+    'pending' => 'බලාපොරොත්තුවෙන්',
+    'not_recorded' => 'සටහන් කර නැත',
+
+    'registration_assignment' => 'ආරක්ෂණ ලියාපදිංචිය සහ පැවරුම',
+    'registration_assignment_desc' => 'වගකිවයුතු නිලධාරියා සහ වත්මන් ආරක්ෂණ කාර්ය ප්‍රවාහ අදියර සටහන් කරන්න.',
+    'protection_officer' => 'ආරක්ෂණ නිලධාරී',
+    'select_protection_officer' => 'ආරක්ෂණ නිලධාරියෙකු තෝරන්න',
+    'workflow_status' => 'ආරක්ෂණ කාර්ය ප්‍රවාහ තත්ත්වය',
+    'local_police_station' => 'ප්‍රාදේශීය පොලිස් ස්ථානය',
+    'threat_type_placeholder' => 'උදා: මරණ තර්ජනය / බලපෑම් කිරීම / බිය ගැන්වීම',
+
+    'threat_assessment_coordination' => 'තර්ජන ඇගයීම් සම්බන්ධීකරණය',
+    'threat_assessment_coordination_desc' => 'පොලිස් ආරක්ෂණ අංශයට යැවූ ඉල්ලීම සහ ආපසු ලැබුණු ඇගයීම නිරීක්ෂණය කරන්න.',
+    'threat_assessment_requested_date' => 'තර්ජන ඇගයීම ඉල්ලූ දිනය',
+    'police_reference' => 'පොලිස් යොමු අංකය',
+    'threat_assessment_status' => 'තර්ජන ඇගයීම් තත්ත්වය',
+    'threat_assessment_received_date' => 'තර්ජන ඇගයීම ලැබුණු දිනය',
+    'interim_protection_required' => 'අතුරු ආරක්ෂාව අවශ්‍යයි',
+    'interim_protection_required_desc' => 'සම්පූර්ණ ඇගයීම ලැබීමට පෙර වහාම තාවකාලික ආරක්ෂාව සම්බන්ධීකරණය කළ යුතු විට මෙය සලකුණු කරන්න.',
+    'interim_protection_requested_date' => 'අතුරු ආරක්ෂාව ඉල්ලූ දිනය',
+
+    'threat_assessment_result' => 'තර්ජන ඇගයීම් ප්‍රතිඵලය',
+    'threat_assessment_result_desc' => 'පොලිස් ආරක්ෂණ අංශයෙන් ආපසු ලැබුණු ඇගයීම් අගයන් මෙහි සමාලෝචනය කළ හැක.',
+    'not_determined' => 'තීරණය කර නැත',
+    'threat_assessment_summary' => 'තර්ජන ඇගයීම් සාරාංශය',
+
+    'protection_decision_review' => 'ආරක්ෂණ තීරණය සහ සමාලෝචනය',
+    'protection_decision' => 'ආරක්ෂණ තීරණය',
+    'protection_decision_placeholder' => 'ආරක්ෂණ තීරණය සටහන් කරන්න...',
+    'protection_start_date' => 'ආරක්ෂාව ආරම්භ කළ දිනය',
+    'review_date' => 'සමාලෝචන දිනය',
+    'protection_outcome' => 'ආරක්ෂණ ප්‍රතිඵලය',
+
+    'workflow_remarks' => 'කාර්ය ප්‍රවාහ සටහන්',
+    'remarks_placeholder' => 'නවතම ආරක්ෂණ කාර්ය ප්‍රවාහ සටහන ඇතුළත් කරන්න...',
+    'protection_workflow' => 'ආරක්ෂණ කාර්ය ප්‍රවාහය',
+    'changes_recorded_timeline' => 'වෙනස්කම් හවුල් නඩු කාලරේඛාවේ සටහන් වේ.',
+    'cancel' => 'අවලංගු කරන්න',
+    'save_workflow' => 'ආරක්ෂණ කාර්ය ප්‍රවාහය සුරකින්න',
+
+    'statuses' => [
+        'protection_request_received' => 'ආරක්ෂණ ඉල්ලීම ලැබී ඇත',
+        'protection_officer_assigned' => 'ආරක්ෂණ නිලධාරියෙකු පවරා ඇත',
+        'threat_assessment_requested' => 'තර්ජන ඇගයීම ඉල්ලා ඇත',
+        'awaiting_threat_assessment' => 'තර්ජන ඇගයීම බලාපොරොත්තුවෙන්',
+        'threat_assessment_received' => 'තර්ජන ඇගයීම ලැබී ඇත',
+        'protection_decision_pending' => 'ආරක්ෂණ තීරණය බලාපොරොත්තුවෙන්',
+        'protection_active' => 'ආරක්ෂාව සක්‍රීයයි',
+        'protection_under_review' => 'ආරක්ෂාව සමාලෝචනය වෙමින්',
+        'protection_continued' => 'ආරක්ෂාව දිගටම ක්‍රියාත්මකයි',
+        'protection_withdrawn' => 'ආරක්ෂාව ඉවත් කර ඇත',
+        'protection_terminated' => 'ආරක්ෂාව අවසන් කර ඇත',
+        'closed' => 'වසා ඇත',
+    ],
+
+    'assessment_statuses' => [
+        'not_requested' => 'ඉල්ලා නැත',
+        'request_sent' => 'ඉල්ලීම යවා ඇත',
+        'request_received' => 'ඉල්ලීම ලැබී ඇත',
+        'assessment_in_progress' => 'ඇගයීම ක්‍රියාත්මක වෙමින්',
+        'assessment_completed' => 'ඇගයීම අවසන් කර ඇත',
+        'assessment_received' => 'ඇගයීම ලැබී ඇත',
+    ],
+
+    'threat_levels' => [
+        'low' => 'අඩු',
+        'moderate' => 'මධ්‍යම',
+        'high' => 'ඉහළ',
+        'critical' => 'අතිශය ඉහළ',
+    ],
+
+    'outcomes' => [
+        'protection_provided' => 'ආරක්ෂාව ලබා දී ඇත',
+        'protection_continued' => 'ආරක්ෂාව දිගටම පවත්වා ඇත',
+        'protection_withdrawn' => 'ආරක්ෂාව ඉවත් කර ඇත',
+        'protection_terminated' => 'ආරක්ෂාව අවසන් කර ඇත',
+        'transferred_referred' => 'මාරු / යොමු කර ඇත',
+        'closed' => 'වසා ඇත',
+    ],
+];

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -63,7 +64,7 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Protection Director',
+            'name' => 'Assistant Director - Protection Services',
             'email' => 'protection.director@napvcw.local',
             'password' => 'password123',
             'employee_number' => 'PD001',
@@ -93,16 +94,6 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Assistance Officer',
-            'email' => 'assistance@napvcw.local',
-            'password' => 'password123',
-            'employee_number' => 'AO001',
-            'role' => 'assistance_officer',
-            'division' => 'Assistance Services',
-            'is_active' => true,
-        ]);
-
-        User::create([
             'name' => 'System Administrator',
             'email' => 'admin@napvcw.local',
             'password' => 'password123',
@@ -111,5 +102,24 @@ class UserSeeder extends Seeder
             'division' => 'System Administration',
             'is_active' => true,
         ]);
+
+        User::updateOrCreate(
+    [
+        'employee_number' => 'PPD001',
+    ],
+    [
+        'name' => 'Director - Police Protection',
+        'designation' => 'Director - Police Protection',
+        'role' => 'police_protection_director',
+        'division' => 'Police Protection',
+
+        'password' => Hash::make(
+            'password123'
+        ),
+
+        'account_status' => 'active',
+        'is_active' => true,
+    ]
+    );
     }
 }

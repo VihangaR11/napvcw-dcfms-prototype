@@ -25,3 +25,19 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# NAPVCW operational / migration data
+/storage/app/imports/
+/storage/app/private/
+
+# Database exports
+*.sql
+*.dump
+*.backup
+
+# Microsoft Office temporary files
+~$*
+
+# Generated case reports / exports
+/storage/app/reports/
+/storage/app/exports/

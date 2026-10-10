@@ -64,8 +64,8 @@ return [
     ],
 
     'divisions' => [
-        'law_enforcement' => 'නීති හා නීතිය ක්‍රියාත්මක කිරීමේ අංශය',
-        'protection_services' => 'ආරක්ෂණ සේවා අංශය',
+        'law_enforcement' => 'නීති හා නීති බලාත්මක කිරීමේ අංශය',
+        'protection_services' => 'රැකවරණ අංශය',
         'police_protection' => 'පොලිස් ආරක්ෂණ අංශය',
         'assistance_services' => 'සහාය සේවා අංශය',
     ],
